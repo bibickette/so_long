@@ -6,7 +6,7 @@
 #    By: phwang <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/16 22:31:44 by phwang            #+#    #+#              #
-#    Updated: 2024/03/16 22:55:51 by phwang           ###   ########.fr        #
+#    Updated: 2024/03/16 23:44:29 by phwang           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,6 +15,7 @@ NAME = so_long
 SRC_DIR = src
 OBJ_DIR = obj
 
+LIBFT = -L./LIBFT -lft
 MINILIBX_FLAGS = -Lminilibx-linux -lmlx_Linux -lXext -lX11 -lm -lz
 
 CC = cc
@@ -36,15 +37,16 @@ $(OBJ_DIR)/%.o : $(SRC_DIR)/%.c
 	@$(CC) $(CFLAGS) -o $@ -c $<
 
 $(NAME): $(OBJ_DIR) $(OBJ)
+	@make -s -C LIBFT_PERSO
 	@make -s -C minilibx-linux
-	@$(CC) $(C_FLAGS) $(OBJ) $(MINILIBX_FLAGS) -o $(NAME)
+	@$(CC) $(C_FLAGS) $(OBJ) $(MINILIBX_FLAGS) -o $(NAME) $(LIBFT)
 
 clean:
-	@make -s -C minilibx-linux clean
+	@make -s -C LIBFT_PERSO clean
 	@rm -rf $(OBJ_DIR)
 
 fclean: clean
-	@make -s -C minilibx-linux clean
+	@make -s -C LIBFT_PERSO fclean
 	@rm -f $(NAME)
 
 re:	fclean all
