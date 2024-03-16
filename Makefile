@@ -6,7 +6,7 @@
 #    By: phwang <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/16 22:31:44 by phwang            #+#    #+#              #
-#    Updated: 2024/03/16 22:50:54 by phwang           ###   ########.fr        #
+#    Updated: 2024/03/16 22:55:16 by phwang           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,8 +49,11 @@ fclean: clean
 
 re:	fclean all
 
-git: fclean
+git:
 	git add *
+	git rm --cached -rf minilibx-linux 
+	git rm -rf minilibx_mms_20200219_beta
+	git rm -rf minilibx_opengl
 	git commit -m "maj"
 	git push
 	git status
