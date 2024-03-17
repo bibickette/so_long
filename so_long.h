@@ -6,7 +6,7 @@
 /*   By: phwang <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/16 22:21:39 by phwang            #+#    #+#             */
-/*   Updated: 2024/03/17 22:52:12 by phwang           ###   ########.fr       */
+/*   Updated: 2024/03/17 23:37:24 by phwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,8 @@ typedef struct s_window
 }	t_win;
 
 void	ft_destroy(t_win window);
-int		handle_input_key(int keysym, t_win *window);
-int		handle_mouse_esc(t_win *window);
+int		esc_exit(int keysym, t_win *window);
+int		cross_exit(t_win *window);
 t_win	create_window(int height, int width, char *str);
 
 #endif

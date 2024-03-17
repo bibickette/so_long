@@ -6,7 +6,7 @@
 /*   By: phwang <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/17 00:04:29 by phwang            #+#    #+#             */
-/*   Updated: 2024/03/17 23:31:03 by phwang           ###   ########.fr       */
+/*   Updated: 2024/03/17 23:37:47 by phwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ int	main(void)
 		ft_printf("%s", ERROR_MSG);
 		exit (-1);
 	}
-	mlx_key_hook(window.win_ptr, &handle_input_key, &window);
-	mlx_hook(window.win_ptr, 17, 0, &handle_mouse_esc, &window);
+	mlx_key_hook(window.win_ptr, &esc_exit, &window);
+	mlx_hook(window.win_ptr, 17, 0, &cross_exit, &window);
 	mlx_loop(window.mlx_ptr);
 	ft_destroy(window);
 }

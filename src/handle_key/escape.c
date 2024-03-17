@@ -6,13 +6,13 @@
 /*   By: phwang <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/17 00:14:53 by phwang            #+#    #+#             */
-/*   Updated: 2024/03/17 23:01:51 by phwang           ###   ########.fr       */
+/*   Updated: 2024/03/17 23:37:10 by phwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../so_long.h"
 
-int	handle_input_key(int keysym, t_win *window)
+int	esc_exit(int keysym, t_win *window)
 {
 	if (keysym == XK_Escape)
 	{
@@ -23,7 +23,7 @@ int	handle_input_key(int keysym, t_win *window)
 	return (0);
 }
 
-int handle_mouse_esc(t_win *window)
+int cross_exit(t_win *window)
 {
 	if (window)
 	{
