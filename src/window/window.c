@@ -3,34 +3,36 @@
 /*                                                        :::      ::::::::   */
 /*   window.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: phwang <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: phwang <phwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/17 00:20:41 by phwang            #+#    #+#             */
-/*   Updated: 2024/03/20 01:34:21 by phwang           ###   ########.fr       */
+/*   Updated: 2024/03/20 18:17:39 by phwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../so_long.h"
 
-void	ft_destroy(t_win *window)
+void	ft_destroy(t_long *so_long)
 {
-	mlx_destroy_window(window->mlx_ptr, window->win_ptr);
-	mlx_destroy_display(window->mlx_ptr);
-	free(window->mlx_ptr);
+	mlx_destroy_window(so_long->mlx_ptr, so_long->win_ptr);
+	mlx_destroy_display(so_long->mlx_ptr);
+	free(so_long->mlx_ptr);
+	free(so_long);
+	so_long = 0;
 }
 
-int	create_window(t_win *window, char *str)
+int	create_window(t_long *so_long, char *str)
 {
-	window->mlx_ptr = mlx_init();
-	if (!window->mlx_ptr)
+	so_long->mlx_ptr = mlx_init();
+	if (!so_long->mlx_ptr)
 		return (ERROR);
-	window->win_ptr = mlx_new_window(window->mlx_ptr, 64, 64, str);
-	if (!window->win_ptr)
+	so_long->win_ptr = mlx_new_window(so_long->mlx_ptr, 64, 64, str);
+	if (!so_long->win_ptr)
 	{
-		if (window->mlx_ptr)
+		if (so_long->mlx_ptr)
 		{
-			mlx_destroy_display(window->mlx_ptr);
-			free(window->mlx_ptr);
+			mlx_destroy_display(so_long->mlx_ptr);
+			free(so_long->mlx_ptr);
 		}
 		return (ERROR);
 	}
