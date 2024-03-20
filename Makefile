@@ -6,7 +6,7 @@
 #    By: phwang <phwang@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/16 22:31:44 by phwang            #+#    #+#              #
-#    Updated: 2024/03/20 18:51:59 by phwang           ###   ########.fr        #
+#    Updated: 2024/03/20 20:02:25 by phwang           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -55,7 +55,7 @@ fclean: clean
 re:	fclean all
 
 git:
-	git add Makefile so_long.h src/*
+	git add Makefile so_long.h src/* maps/*
 	git commit -m "maj"
 	git push
 	git status
