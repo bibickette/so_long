@@ -6,7 +6,7 @@
 #    By: phwang <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/16 22:31:44 by phwang            #+#    #+#              #
-#    Updated: 2024/03/17 00:22:05 by phwang           ###   ########.fr        #
+#    Updated: 2024/03/20 00:08:14 by phwang           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,6 +22,7 @@ CC = cc
 C_FLAGS = -Wall -Wextra -Werror
 
 SRC = \
+	map.c \
 	window.c \
 	escape.c \
 	main.c 

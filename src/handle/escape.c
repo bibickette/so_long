@@ -1,26 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   escape.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: phwang <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/17 00:04:29 by phwang            #+#    #+#             */
-/*   Updated: 2024/03/20 01:26:18 by phwang           ###   ########.fr       */
+/*   Created: 2024/03/17 00:14:53 by phwang            #+#    #+#             */
+/*   Updated: 2024/03/20 01:28:09 by phwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../so_long.h"
 
-int	main(int argc, char **argv)
+int	esc_exit(int keysym, t_win *window)
 {
-	t_win	window;
-	
-	// map_check(argv[1], window);
-	if (create_window(&window, "Very very long") == ERROR)
-		return (ERROR);
-	mlx_key_hook(window.win_ptr, &esc_exit, &window);
-	mlx_hook(window.win_ptr, 17, 0, &cross_exit, &window);
-	mlx_loop(window.mlx_ptr);
-	ft_destroy(&window);
+	if (keysym == XK_Escape)
+	{
+		ft_printf("(ESC) key has been pressed ! bye\n");
+		ft_destroy(window);
+		exit (EXIT_SUCCESS);
+	}
+	return (0);
+}
+
+int cross_exit(t_win *window)
+{
+	if (window)
+	{
+		ft_printf("Cross has been clicked ! bye\n");
+		ft_destroy(window);
+		exit (EXIT_SUCCESS);
+	}
 }
