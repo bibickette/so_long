@@ -1,27 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   map_error.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: phwang <phwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/17 00:04:29 by phwang            #+#    #+#             */
-/*   Updated: 2024/03/20 20:30:09 by phwang           ###   ########.fr       */
+/*   Created: 2024/03/20 20:39:39 by phwang            #+#    #+#             */
+/*   Updated: 2024/03/20 20:42:38 by phwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../so_long.h"
 
-int	main(int argc, char **argv)
+void	msg_error(char *error_msg, t_long *so_long)
 {
-	t_long *so_long;
+	ft_printf("%s", error_msg);
+	free(so_long);
+	so_long = 0;
+	exit (EXIT_FAILURE);
+}
 
-	so_long = malloc(sizeof(t_long));
-	map_check(argc, argv, &so_long);
-	if (create_window(so_long, "Very very long") == ERROR)
-		return (ERROR);
-	mlx_key_hook(so_long->win_ptr, &esc_exit, so_long);
-	mlx_hook(so_long->win_ptr, 17, 0, &cross_exit, so_long);
-	mlx_loop(so_long->mlx_ptr);
-	ft_destroy(so_long);
+void	handle_error_free(t_long *so_long)
+{
+	free(so_long);
+	so_long = 0;
+	exit (EXIT_FAILURE);
 }

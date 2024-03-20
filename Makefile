@@ -6,7 +6,7 @@
 #    By: phwang <phwang@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/16 22:31:44 by phwang            #+#    #+#              #
-#    Updated: 2024/03/20 20:02:25 by phwang           ###   ########.fr        #
+#    Updated: 2024/03/20 20:43:10 by phwang           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,9 @@ CC = cc
 C_FLAGS = -Wall -Wextra -Werror -g3
 
 SRC = \
-	map.c \
+	ft_strjoin_solong.c \
+	map_check.c \
+	map_error.c \
 	window.c \
 	escape.c \
 	main.c 

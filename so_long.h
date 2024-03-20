@@ -6,7 +6,7 @@
 /*   By: phwang <phwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/16 22:21:39 by phwang            #+#    #+#             */
-/*   Updated: 2024/03/20 18:54:49 by phwang           ###   ########.fr       */
+/*   Updated: 2024/03/20 20:43:53 by phwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,10 +40,14 @@ int		cross_exit(t_long *solong);
 int		create_window(t_long *solong, char *str);
 void	ft_destroy(t_long *solong);
 
-/* map */
-void	map_check(int argc, char **argv, t_long *solong);
-void	error_name(char *str);
-void	msg_error(char *error_msg);
-int put_in_one_bigline(char *map_name, char *big_line_map);
+/* map_check */
+void	map_check(int argc, char **argv, t_long **solong);
+void	error_name(char *str, t_long *so_long);
+int put_in_one_bigline(char *map_name, char **big_line_map);
+char    *ft_strjoin_solong(char *backup, char *buffer);
+
+/* map_error */
+void	handle_error_free(t_long *so_long);
+void	msg_error(char *error_msg, t_long *so_long);
 
 #endif
