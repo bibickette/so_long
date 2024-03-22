@@ -1,36 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   window.c                                           :+:      :+:    :+:   */
+/*   escape.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: phwang <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/17 00:20:41 by phwang            #+#    #+#             */
-/*   Updated: 2024/03/21 21:38:18 by phwang           ###   ########.fr       */
+/*   Created: 2024/03/17 00:14:53 by phwang            #+#    #+#             */
+/*   Updated: 2024/03/22 20:52:24 by phwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../so_long.h"
 
-void	ft_destroy(t_long *so_long)
+int	esc_exit(int keysym, t_long *so_long)
 {
-	mlx_destroy_window(so_long->mlx_ptr, so_long->win_ptr);
-	mlx_destroy_display(so_long->mlx_ptr);
-	free(so_long->mlx_ptr);	
-	free(so_long);
-	so_long = 0;
+	if (keysym == XK_Escape)
+	{
+		ft_printf("(ESC) key has been pressed ! bye\n");
+		map_free(so_long, (so_long->map_size - 1));
+		ft_destroy(so_long);
+		exit (EXIT_SUCCESS);
+	}
+	return (ERROR);
 }
 
-int	create_window(t_long *so_long, char *str)
+int cross_exit(t_long *so_long)
 {
-	so_long->mlx_ptr = mlx_init();
-	if (!so_long->mlx_ptr)
-		return (ERROR);
-	so_long->win_ptr = mlx_new_window(so_long->mlx_ptr, 300, 300, str);
-	if (!so_long->win_ptr)
+	if (so_long)
 	{
+		ft_printf("Cross has been clicked ! bye\n");
+		map_free(so_long, (so_long->map_size - 1));
 		ft_destroy(so_long);
-		return (ERROR);
+		exit (EXIT_SUCCESS);
 	}
-	return (OK);
+	return (ERROR);
 }

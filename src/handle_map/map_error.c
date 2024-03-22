@@ -1,27 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   map_error.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: phwang <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/17 00:04:29 by phwang            #+#    #+#             */
-/*   Updated: 2024/03/21 21:14:58 by phwang           ###   ########.fr       */
+/*   Created: 2024/03/20 20:39:39 by phwang            #+#    #+#             */
+/*   Updated: 2024/03/22 19:53:18 by phwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../so_long.h"
 
-int	main(int argc, char **argv)
+void	msg_error(char *error_msg, t_long *so_long, int msgflag)
 {
-	t_long *so_long;
+	if (msgflag == 1)
+		ft_printf("%s", error_msg);
+	free(so_long);
+	so_long = 0;
+	exit (EXIT_FAILURE);
+}
 
-	so_long = malloc(sizeof(t_long));
-	set_map(argc, argv, &so_long);
-	if (create_window(so_long, "Very very long") == ERROR)
-		return (ERROR);
-	mlx_key_hook(so_long->win_ptr, &esc_exit, so_long);
-	mlx_hook(so_long->win_ptr, 17, 0, &cross_exit, so_long);
-	mlx_loop(so_long->mlx_ptr);
-	ft_destroy(so_long);
+void	map_free(t_long *so_long, int nb_tab)
+{
+	while (nb_tab >= 0)
+	{
+		free(so_long->map[nb_tab]);
+		nb_tab--;
+	}
+	free(so_long->map);
+	so_long->map = 0;
 }

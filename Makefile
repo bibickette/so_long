@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: phwang <phwang@student.42.fr>              +#+  +:+       +#+         #
+#    By: phwang <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/16 22:31:44 by phwang            #+#    #+#              #
-#    Updated: 2024/03/20 20:43:10 by phwang           ###   ########.fr        #
+#    Updated: 2024/03/22 20:46:40 by phwang           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,8 @@ CC = cc
 C_FLAGS = -Wall -Wextra -Werror -g3
 
 SRC = \
-	ft_strjoin_solong.c \
+	map_check_obj.c \
+	map_set.c \
 	map_check.c \
 	map_error.c \
 	window.c \
@@ -39,12 +40,12 @@ $(OBJ_DIR):
 	@mkdir $(OBJ_DIR)
 
 $(OBJ_DIR)/%.o : $(SRC_DIR)/%.c
-	@$(CC) $(CFLAGS) -o $@ -c $<
+	$(CC) $(C_FLAGS) -o $@ -c $<
 
 $(NAME): $(OBJ_DIR) $(OBJ)
 	@make -s -C LIBFT_PERSO
 	@make -s -C minilibx-linux
-	@$(CC) $(C_FLAGS) $(OBJ) $(MINILIBX_FLAGS) -o $(NAME) $(LIBFT)
+	$(CC) $(C_FLAGS) $(OBJ) $(MINILIBX_FLAGS) -o $(NAME) $(LIBFT)
 
 clean:
 	@make -s -C LIBFT_PERSO clean
