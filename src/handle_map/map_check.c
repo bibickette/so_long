@@ -6,7 +6,7 @@
 /*   By: phwang <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 21:21:18 by phwang            #+#    #+#             */
-/*   Updated: 2024/03/22 22:10:37 by phwang           ###   ########.fr       */
+/*   Updated: 2024/03/22 22:24:09 by phwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,13 +36,13 @@ int	check_map_walls(t_long *so_long)
 
 	i = -1;
 	while (++i < so_long->map_len)
-		if (so_long->map[0][i] != '1'
-		|| so_long->map[(so_long->map_size - 1)][i] != '1')
+		if (so_long->map[0][i] != WALL
+		|| so_long->map[(so_long->map_size - 1)][i] != WALL)
 			return (ERROR);
 	i = -1;
 	while (++i < so_long->map_size)
-		if (so_long->map[i][0] != '1'
-		|| so_long->map[i][(so_long->map_len - 1)] != '1')
+		if (so_long->map[i][0] != WALL
+		|| so_long->map[i][(so_long->map_len - 1)] != WALL)
 			return (ERROR);
 	return (OK);
 }

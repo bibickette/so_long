@@ -6,7 +6,7 @@
 /*   By: phwang <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 19:36:51 by phwang            #+#    #+#             */
-/*   Updated: 2024/03/22 20:38:05 by phwang           ###   ########.fr       */
+/*   Updated: 2024/03/22 22:23:35 by phwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,9 @@ int	check_nb_item(t_long *so_long)
 		j = -1;
 		while (++j < (so_long->map_len))
 		{
-			if (so_long->map[i][j] == 'E')
+			if (so_long->map[i][j] == DOOR)
 				exit++;
-			if (so_long->map[i][j] == 'P')
+			if (so_long->map[i][j] == PLAYER)
 				player++;
 		}
 	}
@@ -52,7 +52,7 @@ int	check_collectable(t_long *so_long)
 	{
 		j = -1;
 		while (++j < (so_long->map_len))
-			if (so_long->map[i][j] == 'C')
+			if (so_long->map[i][j] == ITEM)
 				obj++;
 	}
 	if (obj < 1)

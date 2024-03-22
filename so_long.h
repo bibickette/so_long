@@ -6,7 +6,7 @@
 /*   By: phwang <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/16 22:21:39 by phwang            #+#    #+#             */
-/*   Updated: 2024/03/22 22:13:08 by phwang           ###   ########.fr       */
+/*   Updated: 2024/03/22 22:23:38 by phwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,11 @@
 # define ERROR_MAP_NAME "Map name/extension/path has error !\n"
 # define ERROR_MAP_CONTENT "Map content has error !\n"
 
-# define WALL "1"
-# define FLOOR "0"
-# define PLAYER "P"
-# define DOOR "E"
-# define OBJ "C"
+# define WALL '1'
+# define FLOOR '0'
+# define PLAYER 'P'
+# define DOOR 'E'
+# define ITEM 'C'
 
 typedef struct s_long
 {
