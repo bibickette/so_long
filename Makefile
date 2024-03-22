@@ -6,7 +6,7 @@
 #    By: phwang <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/16 22:31:44 by phwang            #+#    #+#              #
-#    Updated: 2024/03/22 20:46:40 by phwang           ###   ########.fr        #
+#    Updated: 2024/03/22 21:09:17 by phwang           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ LIBFT = -L./LIBFT_PERSO -lft
 MINILIBX_FLAGS = -Lminilibx-linux -lmlx_Linux -lXext -lX11 -lm -lz
 
 CC = cc
-C_FLAGS = -Wall -Wextra -Werror -g3
+CFLAGS = -Wall -Wextra -Werror -g3
 
 SRC = \
 	map_check_obj.c \
@@ -40,12 +40,12 @@ $(OBJ_DIR):
 	@mkdir $(OBJ_DIR)
 
 $(OBJ_DIR)/%.o : $(SRC_DIR)/%.c
-	$(CC) $(C_FLAGS) -o $@ -c $<
+	$(CC) $(CFLAGS) -o $@ -c $<
 
 $(NAME): $(OBJ_DIR) $(OBJ)
 	@make -s -C LIBFT_PERSO
 	@make -s -C minilibx-linux
-	$(CC) $(C_FLAGS) $(OBJ) $(MINILIBX_FLAGS) -o $(NAME) $(LIBFT)
+	$(CC) $(CFLAGS) $(OBJ) $(MINILIBX_FLAGS) -o $(NAME) $(LIBFT)
 
 clean:
 	@make -s -C LIBFT_PERSO clean

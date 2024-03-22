@@ -6,7 +6,7 @@
 /*   By: phwang <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/17 00:20:41 by phwang            #+#    #+#             */
-/*   Updated: 2024/03/21 21:38:18 by phwang           ###   ########.fr       */
+/*   Updated: 2024/03/22 22:14:25 by phwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ft_destroy(t_long *so_long)
 {
 	mlx_destroy_window(so_long->mlx_ptr, so_long->win_ptr);
 	mlx_destroy_display(so_long->mlx_ptr);
-	free(so_long->mlx_ptr);	
+	free(so_long->mlx_ptr);
 	free(so_long);
 	so_long = 0;
 }

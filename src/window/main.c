@@ -6,7 +6,7 @@
 /*   By: phwang <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/17 00:04:29 by phwang            #+#    #+#             */
-/*   Updated: 2024/03/21 21:14:58 by phwang           ###   ########.fr       */
+/*   Updated: 2024/03/22 22:14:03 by phwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	main(int argc, char **argv)
 {
-	t_long *so_long;
+	t_long	*so_long;
 
 	so_long = malloc(sizeof(t_long));
 	set_map(argc, argv, &so_long);

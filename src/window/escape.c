@@ -6,7 +6,7 @@
 /*   By: phwang <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/17 00:14:53 by phwang            #+#    #+#             */
-/*   Updated: 2024/03/22 20:52:24 by phwang           ###   ########.fr       */
+/*   Updated: 2024/03/22 22:13:54 by phwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	esc_exit(int keysym, t_long *so_long)
 	return (ERROR);
 }
 
-int cross_exit(t_long *so_long)
+int	cross_exit(t_long *so_long)
 {
 	if (so_long)
 	{

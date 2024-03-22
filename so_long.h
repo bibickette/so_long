@@ -6,7 +6,7 @@
 /*   By: phwang <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/16 22:21:39 by phwang            #+#    #+#             */
-/*   Updated: 2024/03/22 20:55:54 by phwang           ###   ########.fr       */
+/*   Updated: 2024/03/22 22:13:08 by phwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,14 +35,13 @@ typedef struct s_long
 {
 	void	*mlx_ptr;
 	void	*win_ptr;
-	
+
 	char	**map;
 	int		map_size;
 	int		map_len;
-	
+
 	int		collectable;
 }	t_long;
-
 
 /*escape*/
 int		esc_exit(int keysym, t_long *solong);
@@ -55,7 +54,8 @@ void	ft_destroy(t_long *solong);
 /* map_set */
 void	set_map(int argc, char **argv, t_long **solong);
 int		put_in_one_bigline(char *map_name, char **big_line_map);
-char    *heedz_join(char *backup, char *buffer);
+char	*long_join(char *backup, char *buffer);
+char	*heedz_join(char *str, char *backup, char *buffer);
 
 /* map_error */
 void	msg_error(char *error_msg, t_long *so_long, int msgflag);
