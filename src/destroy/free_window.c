@@ -1,29 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   window.c                                           :+:      :+:    :+:   */
+/*   free_window.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: phwang <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/17 00:20:41 by phwang            #+#    #+#             */
-/*   Updated: 2024/03/24 18:04:59 by phwang           ###   ########.fr       */
+/*   Created: 2024/03/24 18:04:09 by phwang            #+#    #+#             */
+/*   Updated: 2024/03/24 19:26:01 by phwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../so_long.h"
 
-int	create_window(t_long *so_long, char *str)
+void	ft_destroy(t_long *so_long)
 {
-	so_long->mlx_ptr = mlx_init();
-	if (!so_long->mlx_ptr)
-		return (ERROR);
-	if (background_creation(so_long) == ERROR)
-		return (ERROR);
-	so_long->win_ptr = mlx_new_window(so_long->mlx_ptr, (so_long->map_len * IMG_WIDTH), (so_long->map_size * IMG_HEIGHT), str);
-	if (!so_long->win_ptr)
-	{
-		ft_destroy(so_long);
-		return (ERROR);
-	}
-	return (OK);
+	if (so_long->win_ptr)
+		mlx_destroy_window(so_long->mlx_ptr, so_long->win_ptr);
+	if (so_long->mlx_ptr)
+		mlx_destroy_display(so_long->mlx_ptr);
+	if (so_long->mlx_ptr)
+		free(so_long->mlx_ptr);
+	free(so_long);
+	so_long = 0;
 }

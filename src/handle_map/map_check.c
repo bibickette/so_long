@@ -6,7 +6,7 @@
 /*   By: phwang <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 21:21:18 by phwang            #+#    #+#             */
-/*   Updated: 2024/03/22 22:24:09 by phwang           ###   ########.fr       */
+/*   Updated: 2024/03/24 00:13:38 by phwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	check_map(t_long **so_long)
 	while ((*so_long)->map[i])
 		i++;
 	(*so_long)->map_size = i;
-	if ((i < 4)
+	if ((i < 3)
 		|| (check_map_len(*so_long) == ERROR)
 		|| (check_map_walls(*so_long) == ERROR)
 		|| (check_nb_item(*so_long) == ERROR))

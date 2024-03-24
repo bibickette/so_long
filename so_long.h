@@ -6,42 +6,14 @@
 /*   By: phwang <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/16 22:21:39 by phwang            #+#    #+#             */
-/*   Updated: 2024/03/22 22:23:38 by phwang           ###   ########.fr       */
+/*   Updated: 2024/03/24 20:29:33 by phwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SO_LONG_H
 # define SO_LONG_H
 
-# include <X11/X.h>
-# include <X11/keysym.h>
-# include <fcntl.h>
-# include "LIBFT_PERSO/libft.h"
-# include "minilibx-linux/mlx.h"
-
-# define OK 1
-# define ERROR -1
-# define ERROR_MSG "Error\n"
-# define ERROR_MAP_NAME "Map name/extension/path has error !\n"
-# define ERROR_MAP_CONTENT "Map content has error !\n"
-
-# define WALL '1'
-# define FLOOR '0'
-# define PLAYER 'P'
-# define DOOR 'E'
-# define ITEM 'C'
-
-typedef struct s_long
-{
-	void	*mlx_ptr;
-	void	*win_ptr;
-
-	char	**map;
-	int		map_size;
-	int		map_len;
-
-	int		collectable;
-}	t_long;
+# include "so_long_struct.h"
 
 /*escape*/
 int		esc_exit(int keysym, t_long *solong);
@@ -71,5 +43,34 @@ int		check_map_walls(t_long *so_long);
 /* map_check_inside */
 int		check_nb_item(t_long *so_long);
 int		check_collectable(t_long *so_long);
+
+
+/*background*/
+int background_creation(t_long *so_long);
+int set_background(t_long *so_long);
+int set_data_addr(t_long *so_long);
+
+/*img_error*/
+void free_background(t_long *so_long);
+void apocalypse(t_long *so_long);
+
+/* free_tiles */
+void free_tiles(t_long *so_long);
+void free_tiles_more(t_long *so_long);
+void free_tiles_expanded(t_long *so_long);
+void free_tiles_super(t_long *so_long);
+
+/* free_tiles_more*/
+void free_tiles_supra(t_long *so_long);
+void	free_tiles_final(t_long *so_long);
+
+/* tiles*/
+int set_img_path(t_long ***so_long);
+int set_tiles(t_long *so_long);
+
+/* tiles_initiate*/
+void	set_null(t_long *so_long);
+int	set_malloc(t_long **so_long);
+int	check_malloc_error(t_long **so_long);
 
 #endif

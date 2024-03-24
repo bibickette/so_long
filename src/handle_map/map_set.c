@@ -6,7 +6,7 @@
 /*   By: phwang <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 23:21:33 by phwang            #+#    #+#             */
-/*   Updated: 2024/03/22 22:11:42 by phwang           ###   ########.fr       */
+/*   Updated: 2024/03/24 19:42:03 by phwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,11 @@ void	set_map(int argc, char **argv, t_long **so_long)
 	char	*big_line_map;
 
 	if (argc != 2)
+	{
+		free(*so_long);
+		*so_long = 0;
 		exit (EXIT_FAILURE);
+	}
 	check_path_name(argv[1], *so_long);
 	if (put_in_one_bigline(argv[1], &big_line_map) == ERROR)
 		msg_error(ERROR_MSG, *so_long, 0);
