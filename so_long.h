@@ -6,7 +6,7 @@
 /*   By: phwang <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/16 22:21:39 by phwang            #+#    #+#             */
-/*   Updated: 2024/03/24 20:29:33 by phwang           ###   ########.fr       */
+/*   Updated: 2024/03/25 13:25:32 by phwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,12 +65,12 @@ void free_tiles_supra(t_long *so_long);
 void	free_tiles_final(t_long *so_long);
 
 /* tiles*/
-int set_img_path(t_long ***so_long);
+int set_img_path(t_long *so_long);
 int set_tiles(t_long *so_long);
 
 /* tiles_initiate*/
 void	set_null(t_long *so_long);
-int	set_malloc(t_long **so_long);
-int	check_malloc_error(t_long **so_long);
-
+int	set_malloc(t_long *so_long);
+int	check_malloc_error(t_long *so_long);
+void set_ptr_img_null(t_long *so_long);
 #endif

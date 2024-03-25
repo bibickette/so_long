@@ -6,7 +6,7 @@
 /*   By: phwang <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/24 18:23:18 by phwang            #+#    #+#             */
-/*   Updated: 2024/03/24 18:47:05 by phwang           ###   ########.fr       */
+/*   Updated: 2024/03/25 13:31:00 by phwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void free_tiles_supra(t_long *so_long)
 {
 	if (so_long->tiles->outw_corner_right)
 	{
-		if (so_long->tiles->outw_corner_left->mlx_img)
+		if (so_long->tiles->outw_corner_right->mlx_img)
 			mlx_destroy_image(so_long->mlx_ptr,
 				so_long->tiles->outw_corner_right->mlx_img);
 		free(so_long->tiles->outw_corner_right);

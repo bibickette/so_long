@@ -6,7 +6,7 @@
 /*   By: phwang <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/24 18:05:58 by phwang            #+#    #+#             */
-/*   Updated: 2024/03/24 20:18:51 by phwang           ###   ########.fr       */
+/*   Updated: 2024/03/25 13:23:06 by phwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,29 +14,26 @@
 
 int set_tiles(t_long *so_long)
 {
-	// so_long->tiles = malloc(sizeof(t_tiles));
-	// if (!so_long->tiles)
-	// 	return (ERROR);
-	// so_long->tiles = 0;
 	so_long->tiles = malloc(sizeof(t_tiles));
+	if (!so_long->tiles)
+		return (ERROR);
 	set_null(so_long);
-	if (set_malloc(&so_long) == ERROR)
+	if (set_malloc(so_long) == ERROR)
 	{
 		apocalypse(so_long);
-		return (ERROR);
+		exit (ERROR);
 	}
-	// set_img_path(&so_long);
+	set_img_path(so_long);
 	return (OK);
 }
 
-int set_img_path(t_long ***so_long)
+int set_img_path(t_long *so_long)
 {
 	int wedontcare;
-	// (*so_long)->tiles->bush = malloc(sizeof(t_img));
-	(**so_long)->tiles->bush->mlx_img = mlx_xpm_file_to_image((**so_long)->mlx_ptr, BUSH, &wedontcare, &wedontcare);
-	if (!((**so_long)->tiles->bush->mlx_img))
+	so_long->tiles->bush->mlx_img = mlx_xpm_file_to_image(so_long->mlx_ptr, BUSH, &wedontcare, &wedontcare);
+	if (!(so_long->tiles->bush->mlx_img))
 		return (ERROR);
-	set_data_addr(**so_long);
+	set_data_addr(so_long);
 	return (OK);
 }
 
