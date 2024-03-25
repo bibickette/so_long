@@ -6,7 +6,7 @@
 /*   By: phwang <phwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/24 18:05:58 by phwang            #+#    #+#             */
-/*   Updated: 2024/03/25 19:21:29 by phwang           ###   ########.fr       */
+/*   Updated: 2024/03/25 19:41:46 by phwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,6 @@ int set_tiles(t_long *so_long)
 	
 	so_long->tiles = ft_calloc(sizeof(dico) / sizeof(char *), sizeof(t_tile));
 	load_n_set(so_long, dico);
-	// set_ptr_img_null(so_long);
-	// set_img_path(so_long);
 	return (OK);
 }
 

@@ -6,7 +6,7 @@
 /*   By: phwang <phwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/24 00:12:11 by phwang            #+#    #+#             */
-/*   Updated: 2024/03/25 19:34:48 by phwang           ###   ########.fr       */
+/*   Updated: 2024/03/25 19:40:38 by phwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ int background_creation(t_long *so_long)
 		return (ERROR);
 	set_tiles(so_long);
 	set_background(so_long);
-	free_tiles(so_long);
 	return (OK);
 }
 
