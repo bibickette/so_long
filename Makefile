@@ -6,7 +6,7 @@
 #    By: phwang <phwang@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/16 22:31:44 by phwang            #+#    #+#              #
-#    Updated: 2024/03/25 16:21:52 by phwang           ###   ########.fr        #
+#    Updated: 2024/03/25 19:03:21 by phwang           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,6 @@ SRC = \
 	tiles_initiate.c \
 	tiles.c \
 	free_window.c \
-	free_tiles_more.c \
 	free_tiles.c \
 	free_all.c \
 	img_error.c \

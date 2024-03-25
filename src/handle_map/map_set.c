@@ -3,33 +3,29 @@
 /*                                                        :::      ::::::::   */
 /*   map_set.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: phwang <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: phwang <phwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 23:21:33 by phwang            #+#    #+#             */
-/*   Updated: 2024/03/24 19:42:03 by phwang           ###   ########.fr       */
+/*   Updated: 2024/03/25 19:01:09 by phwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../so_long.h"
 
-void	set_map(int argc, char **argv, t_long **so_long)
+void	set_map(int argc, char **argv, t_long *so_long)
 {
 	char	*big_line_map;
 
 	if (argc != 2)
-	{
-		free(*so_long);
-		*so_long = 0;
 		exit (EXIT_FAILURE);
-	}
-	check_path_name(argv[1], *so_long);
+	check_path_name(argv[1], so_long);
 	if (put_in_one_bigline(argv[1], &big_line_map) == ERROR)
-		msg_error(ERROR_MSG, *so_long, 0);
-	(*so_long)->map = ft_split(big_line_map, '\n');
-	if ((*so_long)->map == 0)
+		msg_error(ERROR_MSG, so_long, 0);
+	so_long->map = ft_split(big_line_map, '\n');
+	if (so_long->map == 0)
 	{
 		free(big_line_map);
-		msg_error(ERROR_MSG, *so_long, 0);
+		msg_error(ERROR_MSG, so_long, 0);
 	}
 	free(big_line_map);
 	check_map(so_long);

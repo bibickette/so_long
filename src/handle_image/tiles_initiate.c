@@ -6,7 +6,7 @@
 /*   By: phwang <phwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/24 19:13:09 by phwang            #+#    #+#             */
-/*   Updated: 2024/03/25 17:32:46 by phwang           ###   ########.fr       */
+/*   Updated: 2024/03/25 18:48:04 by phwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,23 +73,23 @@
 // 	so_long->tiles->outw_left = 0;
 // }
 
-void set_ptr_img_null(t_long *so_long)
-{
-	so_long->tiles.bush.mlx_img = 0;
-	so_long->tiles.collectable.mlx_img = 0;
-	so_long->tiles.p_down.mlx_img = 0;
-	so_long->tiles.p_left.mlx_img = 0;
-	so_long->tiles.p_right.mlx_img = 0;
-	so_long->tiles.p_up.mlx_img = 0;
-	so_long->tiles.exit_close.mlx_img = 0;
-	so_long->tiles.exit_open.mlx_img = 0;
-	so_long->tiles.fence.mlx_img = 0;
-	so_long->tiles.floor_dirt.mlx_img = 0;
-	so_long->tiles.floor_flower.mlx_img = 0;
-	so_long->tiles.floor_plain.mlx_img = 0;
-	so_long->tiles.outw_corner_left.mlx_img = 0;
-	so_long->tiles.outw_corner_right.mlx_img = 0;
-	so_long->tiles.outw_low.mlx_img = 0;
-	so_long->tiles.outw_right.mlx_img = 0;
-	so_long->tiles.outw_left.mlx_img = 0;
-}
+// void set_ptr_img_null(t_long *so_long)
+// {
+// 	so_long->tiles.bush.mlx_img = 0;
+// 	so_long->tiles.collectable.mlx_img = 0;
+// 	so_long->tiles.p_down.mlx_img = 0;
+// 	so_long->tiles.p_left.mlx_img = 0;
+// 	so_long->tiles.p_right.mlx_img = 0;
+// 	so_long->tiles.p_up.mlx_img = 0;
+// 	so_long->tiles.exit_close.mlx_img = 0;
+// 	so_long->tiles.exit_open.mlx_img = 0;
+// 	so_long->tiles.fence.mlx_img = 0;
+// 	so_long->tiles.floor_dirt.mlx_img = 0;
+// 	so_long->tiles.floor_flower.mlx_img = 0;
+// 	so_long->tiles.floor_plain.mlx_img = 0;
+// 	so_long->tiles.outw_corner_left.mlx_img = 0;
+// 	so_long->tiles.outw_corner_right.mlx_img = 0;
+// 	so_long->tiles.outw_low.mlx_img = 0;
+// 	so_long->tiles.outw_right.mlx_img = 0;
+// 	so_long->tiles.outw_left.mlx_img = 0;
+// }

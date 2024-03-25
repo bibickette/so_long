@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: phwang <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: phwang <phwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/16 22:21:39 by phwang            #+#    #+#             */
-/*   Updated: 2024/03/25 13:25:32 by phwang           ###   ########.fr       */
+/*   Updated: 2024/03/25 18:59:25 by phwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int		create_window(t_long *solong, char *str);
 void	ft_destroy(t_long *solong);
 
 /* map_set */
-void	set_map(int argc, char **argv, t_long **solong);
+void	set_map(int argc, char **argv, t_long *solong);
 int		put_in_one_bigline(char *map_name, char **big_line_map);
 char	*long_join(char *backup, char *buffer);
 char	*heedz_join(char *str, char *backup, char *buffer);
@@ -34,7 +34,7 @@ void	msg_error(char *error_msg, t_long *so_long, int msgflag);
 void	map_free(t_long *so_long, int nb_tab);
 
 /* map_check */
-void	check_map(t_long **so_long);
+void	check_map(t_long *so_long);
 // definir une taille max mapsize en fonction de la taille des img
 void	check_path_name(char *str, t_long *so_long);
 int		check_map_len(t_long *so_long);
@@ -72,5 +72,8 @@ int set_tiles(t_long *so_long);
 void	set_null(t_long *so_long);
 int	set_malloc(t_long *so_long);
 int	check_malloc_error(t_long *so_long);
-void set_ptr_img_null(t_long *so_long);
+// void set_ptr_img_null(t_long *so_long);
+
+int	load_n_set(t_long *so_long, char **dico);
+
 #endif

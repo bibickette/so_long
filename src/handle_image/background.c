@@ -6,7 +6,7 @@
 /*   By: phwang <phwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/24 00:12:11 by phwang            #+#    #+#             */
-/*   Updated: 2024/03/25 17:50:05 by phwang           ###   ########.fr       */
+/*   Updated: 2024/03/25 19:34:48 by phwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int set_background(t_long *so_long)
 		{
 			if (x < IMG_WIDTH && y < IMG_HEIGHT)
 			{
-			color = *(unsigned int *)(so_long->tiles.bush.addr + ((y * so_long->tiles.bush.line_len + x * (so_long->tiles.bush.bpp / 8))));
+			color = *(unsigned int *)(so_long->tiles[0].img.addr + ((y * so_long->tiles[0].img.line_len + x * (so_long->tiles[0].img.bpp / 8))));
 			pixel = so_long->background.addr + (y * so_long->background.line_len + x * (so_long->background.bpp / 8));
 			if (!(color == (unsigned int)0xFF000000))
 				*(unsigned int *)pixel = color;

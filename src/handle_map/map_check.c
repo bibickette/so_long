@@ -3,30 +3,30 @@
 /*                                                        :::      ::::::::   */
 /*   map_check.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: phwang <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: phwang <phwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 21:21:18 by phwang            #+#    #+#             */
-/*   Updated: 2024/03/24 00:13:38 by phwang           ###   ########.fr       */
+/*   Updated: 2024/03/25 19:01:22 by phwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../so_long.h"
 
-void	check_map(t_long **so_long)
+void	check_map(t_long *so_long)
 {
 	int	i;
 
 	i = 0;
-	while ((*so_long)->map[i])
+	while (so_long->map[i])
 		i++;
-	(*so_long)->map_size = i;
+	so_long->map_size = i;
 	if ((i < 3)
-		|| (check_map_len(*so_long) == ERROR)
-		|| (check_map_walls(*so_long) == ERROR)
-		|| (check_nb_item(*so_long) == ERROR))
+		|| (check_map_len(so_long) == ERROR)
+		|| (check_map_walls(so_long) == ERROR)
+		|| (check_nb_item(so_long) == ERROR))
 	{
-		map_free(*so_long, (i - 1));
-		msg_error(ERROR_MAP_CONTENT, *so_long, 1);
+		map_free(so_long, (i - 1));
+		msg_error(ERROR_MAP_CONTENT, so_long, 1);
 	}
 }
 

@@ -6,7 +6,7 @@
 /*   By: phwang <phwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/24 14:27:32 by phwang            #+#    #+#             */
-/*   Updated: 2024/03/25 17:59:00 by phwang           ###   ########.fr       */
+/*   Updated: 2024/03/25 18:39:56 by phwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,26 +65,11 @@ typedef struct s_image
 	int		endian;
 }	t_img;
 
-typedef struct s_tilesheet
+typedef struct s_tile
 {
-	t_img	bush;
-	t_img	fence;
-	t_img	collectable;
-	t_img	p_up;
-	t_img	p_down;
-	t_img	p_left;
-	t_img	p_right;
-	t_img	exit_close;
-	t_img	exit_open;
-	t_img	floor_plain;
-	t_img	floor_dirt;
-	t_img	floor_flower;
-	t_img	outw_corner_left;
-	t_img	outw_corner_right;
-	t_img	outw_left;
-	t_img	outw_low;
-	t_img	outw_right;
-}	t_tiles;
+	char	*name;
+	t_img	img;
+}	t_tile;
 
 typedef struct s_long
 {
@@ -96,7 +81,7 @@ typedef struct s_long
 	int		map_len;
 
 	t_img		background;
-	t_tiles 	tiles;
+	t_tile 	*tiles;
 	
 	int		collectable;
 
