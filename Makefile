@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: phwang <marvin@42.fr>                      +#+  +:+       +#+         #
+#    By: phwang <phwang@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/16 22:31:44 by phwang            #+#    #+#              #
-#    Updated: 2024/03/24 19:26:27 by phwang           ###   ########.fr        #
+#    Updated: 2024/03/25 16:21:52 by phwang           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,7 +40,7 @@ SRC = \
 
 OBJ = $(addprefix $(OBJ_DIR)/, $(addsuffix .o, $(notdir $(basename $(SRC)))))
 	
-.PHONY: all clean fclean re git
+.PHONY: all clean fclean re
 
 all: $(NAME)
 
@@ -64,9 +64,3 @@ fclean: clean
 	@rm -f $(NAME)
 
 re:	fclean all
-
-git:
-	git add Makefile so_long.h src/* maps/*
-	git commit -m "maj"
-	git push
-	git status

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long_struct.h                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: phwang <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: phwang <phwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/24 14:27:32 by phwang            #+#    #+#             */
-/*   Updated: 2024/03/24 17:50:36 by phwang           ###   ########.fr       */
+/*   Updated: 2024/03/25 17:59:00 by phwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,22 +56,6 @@ typedef struct s_long t_long;
 typedef struct s_image t_img;
 typedef struct s_tilesheet t_tiles;
 
-typedef struct s_long
-{
-	void	*mlx_ptr;
-	void	*win_ptr;
-
-	char	**map;
-	int		map_size;
-	int		map_len;
-
-	t_img		*background;
-	t_tiles		*tiles;
-	
-	int		collectable;
-
-}	t_long;
-
 typedef struct s_image
 {
 	void	*mlx_img;
@@ -83,23 +67,39 @@ typedef struct s_image
 
 typedef struct s_tilesheet
 {
-	t_img	*bush;
-	t_img	*fence;
-	t_img	*collectable;
-	t_img	*p_up;
-	t_img	*p_down;
-	t_img	*p_left;
-	t_img	*p_right;
-	t_img	*exit_close;
-	t_img	*exit_open;
-	t_img	*floor_plain;
-	t_img	*floor_dirt;
-	t_img	*floor_flower;
-	t_img	*outw_corner_left;
-	t_img	*outw_corner_right;
-	t_img	*outw_left;
-	t_img	*outw_low;
-	t_img	*outw_right;
+	t_img	bush;
+	t_img	fence;
+	t_img	collectable;
+	t_img	p_up;
+	t_img	p_down;
+	t_img	p_left;
+	t_img	p_right;
+	t_img	exit_close;
+	t_img	exit_open;
+	t_img	floor_plain;
+	t_img	floor_dirt;
+	t_img	floor_flower;
+	t_img	outw_corner_left;
+	t_img	outw_corner_right;
+	t_img	outw_left;
+	t_img	outw_low;
+	t_img	outw_right;
 }	t_tiles;
+
+typedef struct s_long
+{
+	void	*mlx_ptr;
+	void	*win_ptr;
+
+	char	**map;
+	int		map_size;
+	int		map_len;
+
+	t_img		background;
+	t_tiles 	tiles;
+	
+	int		collectable;
+
+}	t_long;
 
 #endif

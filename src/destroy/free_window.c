@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   free_window.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: phwang <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: phwang <phwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/24 18:04:09 by phwang            #+#    #+#             */
-/*   Updated: 2024/03/24 19:26:01 by phwang           ###   ########.fr       */
+/*   Updated: 2024/03/25 17:46:21 by phwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,4 +22,5 @@ void	ft_destroy(t_long *so_long)
 		free(so_long->mlx_ptr);
 	free(so_long);
 	so_long = 0;
+	exit (0);
 }
