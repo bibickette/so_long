@@ -6,7 +6,7 @@
 /*   By: phwang <phwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/16 22:21:39 by phwang            #+#    #+#             */
-/*   Updated: 2024/03/25 18:59:25 by phwang           ###   ########.fr       */
+/*   Updated: 2024/03/25 21:11:40 by phwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,5 +75,6 @@ int	check_malloc_error(t_long *so_long);
 // void set_ptr_img_null(t_long *so_long);
 
 int	load_n_set(t_long *so_long, char **dico);
+t_img	*search_img(t_long *so_long, char *img_wanted);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: phwang <phwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/24 00:12:11 by phwang            #+#    #+#             */
-/*   Updated: 2024/03/25 19:40:38 by phwang           ###   ########.fr       */
+/*   Updated: 2024/03/25 21:11:50 by phwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int set_background(t_long *so_long)
 		{
 			if (x < IMG_WIDTH && y < IMG_HEIGHT)
 			{
-			color = *(unsigned int *)(so_long->tiles[0].img.addr + ((y * so_long->tiles[0].img.line_len + x * (so_long->tiles[0].img.bpp / 8))));
+			color = *(unsigned int *)((search_img(so_long, FENCE))->addr + ((y * (search_img(so_long, FENCE))->line_len + x * ((search_img(so_long, FENCE))->bpp / 8))));
 			pixel = so_long->background.addr + (y * so_long->background.line_len + x * (so_long->background.bpp / 8));
 			if (!(color == (unsigned int)0xFF000000))
 				*(unsigned int *)pixel = color;
@@ -49,4 +49,19 @@ int set_background(t_long *so_long)
 		y++;
 	}
 	return (OK);
+}
+
+t_img	*search_img(t_long *so_long, char *img_wanted)
+{
+	t_img	*wanted;
+	int		i;
+
+	i = 0;
+	while (so_long->tiles[i].name)
+	{
+		if (ft_strncmp(so_long->tiles[i].name, img_wanted, ft_strlen(img_wanted)) == 0)
+			wanted = &so_long->tiles[i].img;
+		i++;
+	}
+	return (wanted);
 }
