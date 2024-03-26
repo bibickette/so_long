@@ -6,7 +6,7 @@
 /*   By: phwang <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/16 22:21:39 by phwang            #+#    #+#             */
-/*   Updated: 2024/03/26 22:35:16 by phwang           ###   ########.fr       */
+/*   Updated: 2024/03/27 00:02:54 by phwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,9 +49,8 @@ int		check_collectable(t_long *so_long);
 int background_creation(t_long *so_long);
 void put_img(t_long *so_long, t_img *whatimg, int where_x, int where_y);
 void	set_background(t_long *so_long);
-void choose_img(t_long *so_long, int *x, int *y);
+
 /*img_error*/
-void free_background(t_long *so_long);
 void apocalypse(t_long *so_long);
 
 /* free_tiles */

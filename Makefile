@@ -6,7 +6,7 @@
 #    By: phwang <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/16 22:31:44 by phwang            #+#    #+#              #
-#    Updated: 2024/03/26 22:27:39 by phwang           ###   ########.fr        #
+#    Updated: 2024/03/27 00:06:10 by phwang           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,8 +22,8 @@ CC = cc
 CFLAGS = -Wall -Wextra -Werror -g3
 
 SRC = \
-	image.c \
-	tiles.c \
+	bgrd_image.c \
+	bgrd_tiles.c \
 	free_all.c \
 	background.c \
 	map_check_obj.c \

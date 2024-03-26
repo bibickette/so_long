@@ -6,7 +6,7 @@
 /*   By: phwang <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 21:21:18 by phwang            #+#    #+#             */
-/*   Updated: 2024/03/26 15:05:45 by phwang           ###   ########.fr       */
+/*   Updated: 2024/03/26 23:51:12 by phwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,8 @@ int	check_map_len(t_long *so_long)
 		if (tmp_i != tmp_len)
 			return (ERROR);
 	}
+	if (tmp_i < 5)
+		return (ERROR);
 	so_long->map_len = tmp_i;
 	return (OK);
 }

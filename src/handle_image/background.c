@@ -6,7 +6,7 @@
 /*   By: phwang <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/24 00:12:11 by phwang            #+#    #+#             */
-/*   Updated: 2024/03/26 23:08:42 by phwang           ###   ########.fr       */
+/*   Updated: 2024/03/26 23:58:12 by phwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,19 +43,15 @@ void	set_background(t_long *so_long)
 		x = 0;
 		while (x <  (so_long->map_len))
 		{
-			choose_img(so_long, &x, &y);
+			if (x != 0 && x != so_long->map_len - 1
+			&& y != 0 && y != so_long->map_size - 1)
+				put_inside(so_long, &x, &y);
+			else
+				put_outside(so_long, &x, &y);
 			x++;
 		}
 		y++;
 	}
-}
-
-void choose_img(t_long *so_long, int *x, int *y)
-{
-	if (*x != 0 && *x != so_long->map_len - 1 && *y != 0 && *y != so_long->map_size - 1)
-		put_inside(so_long, x, y);
-	else
-		put_outside(so_long, x, y);
 }
 
 void	put_outside(t_long *so_long, int *x, int *y)
@@ -82,12 +78,12 @@ void	put_inside(t_long *so_long, int *x, int *y)
 	if (so_long->map[*y][*x] == FLOOR || so_long->map[*y][*x] == ITEM
 	|| so_long->map[*y][*x] == PLAYER)
 	{
-		if (random <= 6)
+		if (random <= 6 && random > 1)
 			put_img(so_long, search_img(so_long, FLOOR_PLAIN), *x, *y);
-		else if (random <= 8)
-			put_img(so_long, search_img(so_long, FLOOR_FLOWER), *x, *y);
 		else if (random == 9)
 			put_img(so_long, search_img(so_long, FLOOR_DIRT), *x, *y);
+		else if (!(random <= 6 && random > 1))
+			put_img(so_long, search_img(so_long, FLOOR_FLOWER), *x, *y);
 	}
 	else if (so_long->map[*y][*x] == WALL)
 	{
