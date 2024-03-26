@@ -6,7 +6,7 @@
 /*   By: phwang <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/24 00:12:11 by phwang            #+#    #+#             */
-/*   Updated: 2024/03/26 18:21:41 by phwang           ###   ########.fr       */
+/*   Updated: 2024/03/26 23:08:42 by phwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,61 +53,50 @@ void	set_background(t_long *so_long)
 void choose_img(t_long *so_long, int *x, int *y)
 {
 	if (*x != 0 && *x != so_long->map_len - 1 && *y != 0 && *y != so_long->map_size - 1)
-		put_img(so_long, FLOOR_PLAIN, *x, *y);
+		put_inside(so_long, x, y);
 	else
-		{
-			if ((*x == so_long->map_len - 1 && *y == so_long->map_size - 1))
-				put_img(so_long, OUTW_CORNER_RIGHT, *x, *y);
-			else if (*x == 0 && *y == so_long->map_size - 1)
-				put_img(so_long, OUTW_CORNER_LEFT, *x, *y);
-			else if (*x != 0 && *x != so_long->map_len - 1 && *y == so_long->map_size - 1)
-				put_img(so_long, OUTW_LOW, *x, *y);
-			else if (*x == so_long->map_len - 1 && *y != so_long->map_size -1)
-				put_img(so_long, OUTW_RIGHT, *x, *y);
-			else if (*x == 0 && *x != so_long->map_len - 1 && *y != so_long->map_size - 1)
-				put_img(so_long, OUTW_LEFT, *x, *y);
-			else if (*y == 0 && *x != 0 && *x != so_long->map_len - 1)
-				put_img(so_long, BUSH, *x, *y);		
-		}
+		put_outside(so_long, x, y);
 }
 
-void put_img(t_long *so_long, char *whatimg, int where_x, int where_y)
+void	put_outside(t_long *so_long, int *x, int *y)
 {
-	unsigned int 	color;
-	char 			*pixel;
-	int 			x;
-	int 			y;
-
-	y = -1;
-	while (++y < IMG_HEIGHT)
-	{
-		x = -1;
-		while (++x < IMG_WIDTH)
-		{
-			color = *(unsigned int *)((search_img(so_long, whatimg))->addr 
-					+ ((y * (search_img(so_long, whatimg))->line_len 
-					+ x * ((search_img(so_long, whatimg))->bpp / 8))));
-			pixel = so_long->background.addr + ((y + where_y * IMG_HEIGHT)
-					* so_long->background.line_len + (x + where_x * IMG_WIDTH)
-					* (so_long->background.bpp / 8));
-			if (!(color == (unsigned int)0xFF000000))
-				*(unsigned int *)pixel = color;
-		}
-	}
+	if ((*x == so_long->map_len - 1 && *y == so_long->map_size - 1))
+		put_img(so_long, search_img(so_long, OUTW_CORNER_RIGHT), *x, *y);
+	else if (*x == 0 && *y == so_long->map_size - 1)
+		put_img(so_long, search_img(so_long, OUTW_CORNER_LEFT), *x, *y);
+	else if (*x != 0 && *x != so_long->map_len - 1 && *y == so_long->map_size - 1)
+		put_img(so_long, search_img(so_long, OUTW_LOW), *x, *y);
+	else if (*x == so_long->map_len - 1 && *y != so_long->map_size -1)
+		put_img(so_long, search_img(so_long, OUTW_RIGHT), *x, *y);
+	else if (*x == 0 && *x != so_long->map_len - 1 && *y != so_long->map_size - 1)
+		put_img(so_long, search_img(so_long, OUTW_LEFT), *x, *y);
+	else if (*y == 0 && *x != 0 && *x != so_long->map_len - 1)
+		put_img(so_long, search_img(so_long, BUSH), *x, *y);
 }
 
-t_img	*search_img(t_long *so_long, char *img_wanted)
+void	put_inside(t_long *so_long, int *x, int *y)
 {
-	t_img	*wanted;
-	int		i;
+	int random;
 
-	i = 0;
-	while (so_long->tiles[i].name)
+	random = rand() % 10;
+	if (so_long->map[*y][*x] == FLOOR || so_long->map[*y][*x] == ITEM
+	|| so_long->map[*y][*x] == PLAYER)
 	{
-		if (ft_strncmp(so_long->tiles[i].name,
-		img_wanted, ft_strlen(img_wanted)) == 0)
-			wanted = &so_long->tiles[i].img;
-		i++;
+		if (random <= 6)
+			put_img(so_long, search_img(so_long, FLOOR_PLAIN), *x, *y);
+		else if (random <= 8)
+			put_img(so_long, search_img(so_long, FLOOR_FLOWER), *x, *y);
+		else if (random == 9)
+			put_img(so_long, search_img(so_long, FLOOR_DIRT), *x, *y);
 	}
-	return (wanted);
+	else if (so_long->map[*y][*x] == WALL)
+	{
+		if ((so_long->map[*y][*x] == WALL && so_long->map[*y + 1][*x] == WALL)
+		|| (so_long->map[*y][*x] == WALL && so_long->map[*y - 1][*x] == WALL))
+			put_img(so_long, search_img(so_long, FENCE), *x, *y);
+		else
+			put_img(so_long, search_img(so_long, BUSH), *x, *y);
+	}
+	else if (so_long->map[*y][*x] == DOOR)
+		put_img(so_long, search_img(so_long, EXIT_CLOSE), *x, *y);
 }

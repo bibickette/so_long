@@ -6,7 +6,7 @@
 /*   By: phwang <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/16 22:21:39 by phwang            #+#    #+#             */
-/*   Updated: 2024/03/26 17:20:06 by phwang           ###   ########.fr       */
+/*   Updated: 2024/03/26 22:35:16 by phwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ int		check_collectable(t_long *so_long);
 
 /*background*/
 int background_creation(t_long *so_long);
-void put_img(t_long *so_long, char *whatimg, int where_x, int where_y);
+void put_img(t_long *so_long, t_img *whatimg, int where_x, int where_y);
 void	set_background(t_long *so_long);
 void choose_img(t_long *so_long, int *x, int *y);
 /*img_error*/
@@ -61,5 +61,7 @@ void free_tiles(t_long *so_long);
 int set_tiles(t_long *so_long);
 int	load_n_set(t_long *so_long, char **dico);
 t_img	*search_img(t_long *so_long, char *img_wanted);
+void	put_outside(t_long *so_long, int *x, int *y);
+void	put_inside(t_long *so_long, int *x, int *y);
 
 #endif

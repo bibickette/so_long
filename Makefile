@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: phwang <phwang@student.42.fr>              +#+  +:+       +#+         #
+#    By: phwang <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/16 22:31:44 by phwang            #+#    #+#              #
-#    Updated: 2024/03/25 19:46:02 by phwang           ###   ########.fr        #
+#    Updated: 2024/03/26 22:27:39 by phwang           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,6 +22,7 @@ CC = cc
 CFLAGS = -Wall -Wextra -Werror -g3
 
 SRC = \
+	image.c \
 	tiles.c \
 	free_all.c \
 	background.c \
