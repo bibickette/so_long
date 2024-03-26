@@ -6,7 +6,7 @@
 /*   By: phwang <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 19:36:51 by phwang            #+#    #+#             */
-/*   Updated: 2024/03/22 22:23:35 by phwang           ###   ########.fr       */
+/*   Updated: 2024/03/26 18:29:08 by phwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,8 +52,16 @@ int	check_collectable(t_long *so_long)
 	{
 		j = -1;
 		while (++j < (so_long->map_len))
+		{
 			if (so_long->map[i][j] == ITEM)
 				obj++;
+			if (so_long->map[i][j] != ITEM
+			&& so_long->map[i][j] != PLAYER
+			&& so_long->map[i][j] != DOOR
+			&& so_long->map[i][j] != FLOOR
+			&& so_long->map[i][j] != WALL)
+				return (ERROR);
+		}
 	}
 	if (obj < 1)
 		return (ERROR);
