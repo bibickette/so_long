@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   window.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: phwang <phwang@student.42.fr>              +#+  +:+       +#+        */
+/*   By: phwang <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/17 00:20:41 by phwang            #+#    #+#             */
-/*   Updated: 2024/03/25 19:02:36 by phwang           ###   ########.fr       */
+/*   Updated: 2024/03/26 18:15:37 by phwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	create_window(t_long *so_long, char *str)
 	so_long->win_ptr = mlx_new_window(so_long->mlx_ptr, (so_long->map_len * IMG_WIDTH), (so_long->map_size * IMG_HEIGHT), str);
 	if (!so_long->win_ptr)
 	{
-		ft_destroy(so_long);
+		apocalypse(so_long);
 		return (ERROR);
 	}
 	return (OK);

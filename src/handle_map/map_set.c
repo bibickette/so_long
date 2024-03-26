@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   map_set.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: phwang <phwang@student.42.fr>              +#+  +:+       +#+        */
+/*   By: phwang <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 23:21:33 by phwang            #+#    #+#             */
-/*   Updated: 2024/03/25 19:01:09 by phwang           ###   ########.fr       */
+/*   Updated: 2024/03/26 15:06:05 by phwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,15 @@ void	set_map(int argc, char **argv, t_long *so_long)
 
 	if (argc != 2)
 		exit (EXIT_FAILURE);
-	check_path_name(argv[1], so_long);
+	so_long->mlx_ptr = 0;
+	check_path_name(argv[1]);
 	if (put_in_one_bigline(argv[1], &big_line_map) == ERROR)
-		msg_error(ERROR_MSG, so_long, 0);
+		msg_error(ERROR_MSG, 0);
 	so_long->map = ft_split(big_line_map, '\n');
 	if (so_long->map == 0)
 	{
 		free(big_line_map);
-		msg_error(ERROR_MSG, so_long, 0);
+		msg_error(ERROR_MSG, 0);
 	}
 	free(big_line_map);
 	check_map(so_long);
@@ -90,10 +91,9 @@ char	*heedz_join(char *str, char *backup, char *buffer)
 
 	i = -1;
 	j = 0;
-	if (backup)
-		while (backup[++i] != '\0')
-			str[i] = backup[i];
-	while (buffer[j] != '\0')
+	while (backup[++i])
+		str[i] = backup[i];
+	while (buffer[j])
 		str[i++] = buffer[j++];
 	str[i] = '\0';
 	return (str);

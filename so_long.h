@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: phwang <phwang@student.42.fr>              +#+  +:+       +#+        */
+/*   By: phwang <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/16 22:21:39 by phwang            #+#    #+#             */
-/*   Updated: 2024/03/25 21:11:40 by phwang           ###   ########.fr       */
+/*   Updated: 2024/03/26 17:20:06 by phwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,13 +30,13 @@ char	*long_join(char *backup, char *buffer);
 char	*heedz_join(char *str, char *backup, char *buffer);
 
 /* map_error */
-void	msg_error(char *error_msg, t_long *so_long, int msgflag);
+void	msg_error(char *error_msg, int msgflag);
 void	map_free(t_long *so_long, int nb_tab);
 
 /* map_check */
 void	check_map(t_long *so_long);
 // definir une taille max mapsize en fonction de la taille des img
-void	check_path_name(char *str, t_long *so_long);
+void	check_path_name(char *str);
 int		check_map_len(t_long *so_long);
 int		check_map_walls(t_long *so_long);
 
@@ -47,33 +47,18 @@ int		check_collectable(t_long *so_long);
 
 /*background*/
 int background_creation(t_long *so_long);
-int set_background(t_long *so_long);
-int set_data_addr(t_long *so_long);
-
+void put_img(t_long *so_long, char *whatimg, int where_x, int where_y);
+void	set_background(t_long *so_long);
+void choose_img(t_long *so_long, int *x, int *y);
 /*img_error*/
 void free_background(t_long *so_long);
 void apocalypse(t_long *so_long);
 
 /* free_tiles */
 void free_tiles(t_long *so_long);
-void free_tiles_more(t_long *so_long);
-void free_tiles_expanded(t_long *so_long);
-void free_tiles_super(t_long *so_long);
-
-/* free_tiles_more*/
-void free_tiles_supra(t_long *so_long);
-void	free_tiles_final(t_long *so_long);
 
 /* tiles*/
-int set_img_path(t_long *so_long);
 int set_tiles(t_long *so_long);
-
-/* tiles_initiate*/
-void	set_null(t_long *so_long);
-int	set_malloc(t_long *so_long);
-int	check_malloc_error(t_long *so_long);
-// void set_ptr_img_null(t_long *so_long);
-
 int	load_n_set(t_long *so_long, char **dico);
 t_img	*search_img(t_long *so_long, char *img_wanted);
 

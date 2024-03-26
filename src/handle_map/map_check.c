@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   map_check.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: phwang <phwang@student.42.fr>              +#+  +:+       +#+        */
+/*   By: phwang <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 21:21:18 by phwang            #+#    #+#             */
-/*   Updated: 2024/03/25 19:01:22 by phwang           ###   ########.fr       */
+/*   Updated: 2024/03/26 15:05:45 by phwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	check_map(t_long *so_long)
 		|| (check_nb_item(so_long) == ERROR))
 	{
 		map_free(so_long, (i - 1));
-		msg_error(ERROR_MAP_CONTENT, so_long, 1);
+		msg_error(ERROR_MAP_CONTENT, 1);
 	}
 }
 
@@ -69,7 +69,7 @@ int	check_map_len(t_long *so_long)
 	return (OK);
 }
 
-void	check_path_name(char *str, t_long *so_long)
+void	check_path_name(char *str)
 {
 	int	len;
 
@@ -78,11 +78,11 @@ void	check_path_name(char *str, t_long *so_long)
 			|| (str[len - 3] == 'b')
 			|| (str[len - 2] == 'e')
 			|| (str[len - 1] == 'r')))
-		msg_error(ERROR_MAP_NAME, so_long, 1);
+		msg_error(ERROR_MAP_NAME, 1);
 	if (!((str[0] == 'm')
 			|| (str[1] == 'a')
 			|| (str[2] == 'p')
 			|| (str[3] == 's')
 			|| (str[4] == '/')))
-		msg_error(ERROR_MAP_NAME, so_long, 1);
+		msg_error(ERROR_MAP_NAME, 1);
 }

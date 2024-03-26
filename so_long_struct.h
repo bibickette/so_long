@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long_struct.h                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: phwang <phwang@student.42.fr>              +#+  +:+       +#+        */
+/*   By: phwang <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/24 14:27:32 by phwang            #+#    #+#             */
-/*   Updated: 2024/03/25 18:39:56 by phwang           ###   ########.fr       */
+/*   Updated: 2024/03/26 17:55:39 by phwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@
 
 # define BUSH	"img/xpm/bush.xpm"
 # define FENCE	"img/xpm/fence.xpm"
-# define COLLECTABLE	"img/xpm/collectable_.xpm"
+# define COLLECTABLE	"img/xpm/collectable.xpm"
 # define P_UP	"img/xpm/p_up.xpm"
 # define P_DOWN	"img/xpm/p_down.xpm"
 # define P_LEFT	"img/xpm/p_left.xpm"
