@@ -6,7 +6,7 @@
 /*   By: phwang <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 19:16:06 by phwang            #+#    #+#             */
-/*   Updated: 2024/03/27 19:40:55 by phwang           ###   ########.fr       */
+/*   Updated: 2024/03/27 19:54:43 by phwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,10 @@ int	set_backup_bgrd(t_long *so_long)
 	if (!so_long->backup.addr)
 		return (ERROR);
 	cpy_background(so_long);
+	so_long->backup.addr = mlx_get_data_addr(so_long->backup.mlx_img,
+									&(so_long->backup.bpp),
+									&(so_long->backup.line_len),
+									&(so_long->backup.endian));
 	return (OK);
 }
 

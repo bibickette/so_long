@@ -6,7 +6,7 @@
 /*   By: phwang <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/16 22:21:39 by phwang            #+#    #+#             */
-/*   Updated: 2024/03/27 19:47:34 by phwang           ###   ########.fr       */
+/*   Updated: 2024/03/27 19:55:18 by phwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,4 +77,5 @@ void put_collectable(t_long *so_long);
 
 int	set_backup_bgrd(t_long *so_long);
 void	cpy_background(t_long *so_long);
+void	put_backup(t_long *so_long, int where_x, int where_y);
 #endif
