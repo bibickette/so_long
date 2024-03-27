@@ -6,7 +6,7 @@
 /*   By: phwang <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/24 14:27:32 by phwang            #+#    #+#             */
-/*   Updated: 2024/03/26 17:55:39 by phwang           ###   ########.fr       */
+/*   Updated: 2024/03/27 00:28:11 by phwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,6 +84,14 @@ typedef struct s_long
 	t_tile 	*tiles;
 	
 	int		collectable;
+	int		player;
+	int		exit;
+
+	int		player_x;
+	int		player_y;
+
+	int		exit_x;
+	int		exit_y;
 
 }	t_long;
 

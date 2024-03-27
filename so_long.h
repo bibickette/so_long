@@ -6,7 +6,7 @@
 /*   By: phwang <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/16 22:21:39 by phwang            #+#    #+#             */
-/*   Updated: 2024/03/27 00:02:54 by phwang           ###   ########.fr       */
+/*   Updated: 2024/03/27 00:30:18 by phwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int		check_map_walls(t_long *so_long);
 /* map_check_inside */
 int		check_nb_item(t_long *so_long);
 int		check_collectable(t_long *so_long);
-
+void	check_player_exit(t_long *so_long, int *x, int *y);
 
 /*background*/
 int background_creation(t_long *so_long);
