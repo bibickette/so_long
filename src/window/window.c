@@ -6,7 +6,7 @@
 /*   By: phwang <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/17 00:20:41 by phwang            #+#    #+#             */
-/*   Updated: 2024/03/26 18:15:37 by phwang           ###   ########.fr       */
+/*   Updated: 2024/03/27 18:42:59 by phwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,11 @@ int	create_window(t_long *so_long, char *str)
 		apocalypse(so_long);
 		return (ERROR);
 	}
+	return (OK);
+}
+
+int display(t_long *so_long)
+{
+	mlx_put_image_to_window(so_long->mlx_ptr, so_long->win_ptr, so_long->background.mlx_img, 0, 0);
 	return (OK);
 }

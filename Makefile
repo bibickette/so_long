@@ -6,7 +6,7 @@
 #    By: phwang <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/16 22:31:44 by phwang            #+#    #+#              #
-#    Updated: 2024/03/27 00:06:10 by phwang           ###   ########.fr        #
+#    Updated: 2024/03/27 18:47:33 by phwang           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,6 +22,9 @@ CC = cc
 CFLAGS = -Wall -Wextra -Werror -g3
 
 SRC = \
+	move.c \
+	foreground.c \
+	handle_key.c \
 	bgrd_image.c \
 	bgrd_tiles.c \
 	free_all.c \
@@ -31,7 +34,6 @@ SRC = \
 	map_check.c \
 	map_error.c \
 	window.c \
-	escape.c \
 	main.c 
 
 OBJ = $(addprefix $(OBJ_DIR)/, $(addsuffix .o, $(notdir $(basename $(SRC)))))

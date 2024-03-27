@@ -6,7 +6,7 @@
 /*   By: phwang <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/16 22:21:39 by phwang            #+#    #+#             */
-/*   Updated: 2024/03/27 00:30:18 by phwang           ###   ########.fr       */
+/*   Updated: 2024/03/27 18:44:57 by phwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,5 +62,16 @@ int	load_n_set(t_long *so_long, char **dico);
 t_img	*search_img(t_long *so_long, char *img_wanted);
 void	put_outside(t_long *so_long, int *x, int *y);
 void	put_inside(t_long *so_long, int *x, int *y);
+
+void	move_up(t_long *so_long);
+void	move_down(t_long *so_long);
+void	move_left(t_long *so_long);
+void	move_right(t_long *so_long);
+int	handle_key(int keysym, t_long *so_long);
+int display(t_long *so_long);
+void	handle_end(t_long *so_long);
+void	step_n_item(t_long *so_long, int x, int y);
+void set_foreground(t_long *so_long);
+void put_collectable(t_long *so_long);
 
 #endif
