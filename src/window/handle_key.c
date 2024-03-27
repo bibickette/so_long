@@ -6,7 +6,7 @@
 /*   By: phwang <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/17 00:14:53 by phwang            #+#    #+#             */
-/*   Updated: 2024/03/27 19:43:45 by phwang           ###   ########.fr       */
+/*   Updated: 2024/03/27 20:12:30 by phwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ int	handle_key(int keysym, t_long *so_long)
 		ft_printf("(ESC) key has been pressed ! bye\n");
 		apocalypse(so_long);
 	}
-	handle_end(so_long);
 	return (ERROR);
 }
 
@@ -43,10 +42,6 @@ int	cross_exit(t_long *so_long)
 
 void	handle_end(t_long *so_long)
 {
-	if (so_long->map[so_long->player_y ][so_long->player_x] == DOOR
-	&& so_long->collectable == 0)
-	{
-		ft_printf("You found the escape ! bye\n");
-		apocalypse(so_long);
-	}	
+	ft_printf("You found the escape ! bye\n");
+	apocalypse(so_long);
 }

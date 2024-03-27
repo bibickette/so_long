@@ -6,7 +6,7 @@
 /*   By: phwang <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 15:39:24 by phwang            #+#    #+#             */
-/*   Updated: 2024/03/27 18:38:36 by phwang           ###   ########.fr       */
+/*   Updated: 2024/03/27 20:06:27 by phwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ void	step_n_item(t_long *so_long, int x, int y)
 	if (so_long->map[y][x] == ITEM)
 	{
 		so_long->collectable--;
+		so_long->map[y][x] = FLOOR;
 		if (so_long->collectable == 1)
 			ft_printf("You need one more diamond\n");
 		else if (so_long->collectable == 0)
