@@ -6,7 +6,7 @@
 /*   By: phwang <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 21:21:18 by phwang            #+#    #+#             */
-/*   Updated: 2024/03/26 23:51:12 by phwang           ###   ########.fr       */
+/*   Updated: 2024/03/27 19:11:04 by phwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ void	check_map(t_long *so_long)
 	i = 0;
 	while (so_long->map[i])
 		i++;
+	so_long->step = 0;
 	so_long->map_size = i;
 	if ((i < 3)
 		|| (check_map_len(so_long) == ERROR)
@@ -26,7 +27,7 @@ void	check_map(t_long *so_long)
 		|| (check_nb_item(so_long) == ERROR))
 	{
 		map_free(so_long, (i - 1));
-		msg_error(ERROR_MAP_CONTENT, 1);
+		msg_error(ERROR_MAP_CONTENT);
 	}
 }
 
@@ -80,11 +81,11 @@ void	check_path_name(char *str)
 			|| (str[len - 3] == 'b')
 			|| (str[len - 2] == 'e')
 			|| (str[len - 1] == 'r')))
-		msg_error(ERROR_MAP_NAME, 1);
+		msg_error(ERROR_MAP_NAME);
 	if (!((str[0] == 'm')
 			|| (str[1] == 'a')
 			|| (str[2] == 'p')
 			|| (str[3] == 's')
 			|| (str[4] == '/')))
-		msg_error(ERROR_MAP_NAME, 1);
+		msg_error(ERROR_MAP_NAME);
 }

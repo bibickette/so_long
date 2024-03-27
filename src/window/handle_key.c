@@ -6,7 +6,7 @@
 /*   By: phwang <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/17 00:14:53 by phwang            #+#    #+#             */
-/*   Updated: 2024/03/27 17:16:52 by phwang           ###   ########.fr       */
+/*   Updated: 2024/03/27 19:08:27 by phwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ int	handle_key(int keysym, t_long *so_long)
 	{
 		ft_printf("(ESC) key has been pressed ! bye\n");
 		apocalypse(so_long);
-		exit (EXIT_SUCCESS);
 	}
 	handle_end(so_long);
 	return (ERROR);
@@ -38,7 +37,6 @@ int	cross_exit(t_long *so_long)
 	{
 		ft_printf("Cross has been clicked ! bye\n");
 		apocalypse(so_long);
-		exit (EXIT_SUCCESS);
 	}
 	return (ERROR);
 }
@@ -49,6 +47,5 @@ void	handle_end(t_long *so_long)
 	{
 		ft_printf("You found the escape ! bye\n");
 		apocalypse(so_long);
-		exit (EXIT_SUCCESS);
 	}	
 }

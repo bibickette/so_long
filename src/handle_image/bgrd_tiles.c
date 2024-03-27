@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   tiles.c                                            :+:      :+:    :+:   */
+/*   bgrd_tiles.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: phwang <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/24 18:05:58 by phwang            #+#    #+#             */
-/*   Updated: 2024/03/26 18:13:22 by phwang           ###   ########.fr       */
+/*   Updated: 2024/03/27 19:04:32 by phwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,8 @@ int	load_n_set(t_long *so_long, char **dico)
 	int wedontcare;
 
 	wedontcare = 0;
-	i = 0;
-	while (dico[i])
+	i = -1;
+	while (dico[++i])
 	{
 		so_long->tiles[i].name = dico[i];
 		so_long->tiles[i].img.mlx_img = mlx_xpm_file_to_image(so_long->mlx_ptr,
@@ -42,7 +42,6 @@ int	load_n_set(t_long *so_long, char **dico)
 		if (!(so_long->tiles[i].img.mlx_img))
 			return (ERROR);
 		so_long->tiles[i].img.addr = mlx_get_data_addr(so_long->tiles[i].img.mlx_img, &(so_long->tiles[i].img.bpp), &(so_long->tiles[i].img.line_len), &(so_long->tiles[i].img.endian));
-		i++;
 	}
 	return (OK);
 }

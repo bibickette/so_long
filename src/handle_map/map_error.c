@@ -6,16 +6,15 @@
 /*   By: phwang <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 20:39:39 by phwang            #+#    #+#             */
-/*   Updated: 2024/03/26 18:35:49 by phwang           ###   ########.fr       */
+/*   Updated: 2024/03/27 19:06:45 by phwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../so_long.h"
 
-void	msg_error(char *error_msg, int msgflag)
+void	msg_error(char *error_msg)
 {
-	if (msgflag == 1)
-		ft_printf("%s", error_msg);
+	ft_printf("%s", error_msg);
 	exit (EXIT_FAILURE);
 }
 

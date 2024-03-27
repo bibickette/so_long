@@ -6,7 +6,7 @@
 /*   By: phwang <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/24 18:03:45 by phwang            #+#    #+#             */
-/*   Updated: 2024/03/27 00:02:43 by phwang           ###   ########.fr       */
+/*   Updated: 2024/03/27 19:03:28 by phwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,13 +24,10 @@ void	free_tiles(t_long *so_long)
 {
 	int i;
 
-	i = 0;
-	while (so_long->tiles[i].name)
-	{
+	i = -1;
+	while (so_long->tiles[++i].name)
 		if (so_long->tiles[i].img.mlx_img)
 			mlx_destroy_image(so_long->mlx_ptr, so_long->tiles[i].img.mlx_img);
-		i++;
-	}
 	free(so_long->tiles);
 	so_long->tiles = 0;
 }

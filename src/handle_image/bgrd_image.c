@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   image.c                                            :+:      :+:    :+:   */
+/*   bgrd_image.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: phwang <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/26 22:26:58 by phwang            #+#    #+#             */
-/*   Updated: 2024/03/26 22:27:24 by phwang           ###   ########.fr       */
+/*   Updated: 2024/03/27 19:04:14 by phwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,13 +41,9 @@ t_img	*search_img(t_long *so_long, char *img_wanted)
 	t_img	*wanted;
 	int		i;
 
-	i = 0;
-	while (so_long->tiles[i].name)
-	{
-		if (ft_strncmp(so_long->tiles[i].name,
-		img_wanted, ft_strlen(img_wanted)) == 0)
+	i = -1;
+	while (so_long->tiles[++i].name)
+		if (ft_strncmp(so_long->tiles[i].name, img_wanted, ft_strlen(img_wanted)) == 0)
 			wanted = &so_long->tiles[i].img;
-		i++;
-	}
 	return (wanted);
 }

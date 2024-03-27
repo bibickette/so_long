@@ -6,7 +6,7 @@
 /*   By: phwang <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/24 00:12:11 by phwang            #+#    #+#             */
-/*   Updated: 2024/03/27 18:47:09 by phwang           ###   ########.fr       */
+/*   Updated: 2024/03/27 19:03:48 by phwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,20 +38,18 @@ void	set_background(t_long *so_long)
 	int x;
 	int y;
 
-	y = 0;
-	while (y < (so_long->map_size))
+	y = -1;
+	while (++y < (so_long->map_size))
 	{
-		x = 0;
-		while (x <  (so_long->map_len))
+		x = -1;
+		while (++x <  (so_long->map_len))
 		{
 			if (x != 0 && x != so_long->map_len - 1
 			&& y != 0 && y != so_long->map_size - 1)
 				put_inside(so_long, &x, &y);
 			else
 				put_outside(so_long, &x, &y);
-			x++;
 		}
-		y++;
 	}
 }
 

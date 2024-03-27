@@ -6,7 +6,7 @@
 /*   By: phwang <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/16 22:21:39 by phwang            #+#    #+#             */
-/*   Updated: 2024/03/27 18:44:57 by phwang           ###   ########.fr       */
+/*   Updated: 2024/03/27 19:06:51 by phwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ char	*long_join(char *backup, char *buffer);
 char	*heedz_join(char *str, char *backup, char *buffer);
 
 /* map_error */
-void	msg_error(char *error_msg, int msgflag);
+void	msg_error(char *error_msg);
 void	map_free(t_long *so_long, int nb_tab);
 
 /* map_check */
