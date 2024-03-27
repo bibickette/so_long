@@ -6,7 +6,7 @@
 /*   By: phwang <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/16 22:21:39 by phwang            #+#    #+#             */
-/*   Updated: 2024/03/27 19:06:51 by phwang           ###   ########.fr       */
+/*   Updated: 2024/03/27 19:47:34 by phwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,4 +74,7 @@ void	step_n_item(t_long *so_long, int x, int y);
 void set_foreground(t_long *so_long);
 void put_collectable(t_long *so_long);
 
+
+int	set_backup_bgrd(t_long *so_long);
+void	cpy_background(t_long *so_long);
 #endif

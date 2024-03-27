@@ -6,7 +6,7 @@
 /*   By: phwang <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/24 00:12:11 by phwang            #+#    #+#             */
-/*   Updated: 2024/03/27 19:03:48 by phwang           ###   ########.fr       */
+/*   Updated: 2024/03/27 19:47:46 by phwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ int background_creation(t_long *so_long)
 	if (set_tiles(so_long) == ERROR)
 		return (ERROR);
 	set_background(so_long);
+	set_backup_bgrd(so_long);
 	set_foreground(so_long);
 	return (OK);
 }

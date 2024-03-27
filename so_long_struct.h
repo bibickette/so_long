@@ -6,7 +6,7 @@
 /*   By: phwang <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/24 14:27:32 by phwang            #+#    #+#             */
-/*   Updated: 2024/03/27 18:38:32 by phwang           ###   ########.fr       */
+/*   Updated: 2024/03/27 19:47:08 by phwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,6 +82,7 @@ typedef struct s_long
 
 	t_img		background;
 	t_tile 	*tiles;
+	t_img backup;
 	
 	int		collectable;
 	int		player;

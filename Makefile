@@ -6,7 +6,7 @@
 #    By: phwang <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/16 22:31:44 by phwang            #+#    #+#              #
-#    Updated: 2024/03/27 18:47:33 by phwang           ###   ########.fr        #
+#    Updated: 2024/03/27 19:50:03 by phwang           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,6 +23,7 @@ CFLAGS = -Wall -Wextra -Werror -g3
 
 SRC = \
 	move.c \
+	backup_bgrd.c \
 	foreground.c \
 	handle_key.c \
 	bgrd_image.c \
