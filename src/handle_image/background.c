@@ -6,24 +6,24 @@
 /*   By: phwang <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/24 00:12:11 by phwang            #+#    #+#             */
-/*   Updated: 2024/03/27 19:47:46 by phwang           ###   ########.fr       */
+/*   Updated: 2024/03/27 21:18:05 by phwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../so_long.h"
 
-int background_creation(t_long *so_long)
+int	background_creation(t_long *so_long)
 {
 	so_long->background.mlx_img = 0;
 	so_long->background.mlx_img = mlx_new_image(so_long->mlx_ptr,
-									(so_long->map_len * IMG_WIDTH),
-									(so_long->map_size * IMG_HEIGHT));
+			(so_long->map_len * IMG_WIDTH),
+			(so_long->map_size * IMG_HEIGHT));
 	if (!so_long->background.mlx_img)
 		return (ERROR);
 	so_long->background.addr = mlx_get_data_addr(so_long->background.mlx_img,
-									&(so_long->background.bpp),
-									&(so_long->background.line_len),
-									&(so_long->background.endian));
+			&(so_long->background.bpp),
+			&(so_long->background.line_len),
+			&(so_long->background.endian));
 	if (!so_long->background.addr)
 		return (ERROR);
 	if (set_tiles(so_long) == ERROR)
@@ -36,17 +36,17 @@ int background_creation(t_long *so_long)
 
 void	set_background(t_long *so_long)
 {
-	int x;
-	int y;
+	int	x;
+	int	y;
 
 	y = -1;
 	while (++y < (so_long->map_size))
 	{
 		x = -1;
-		while (++x <  (so_long->map_len))
+		while (++x < (so_long->map_len))
 		{
 			if (x != 0 && x != so_long->map_len - 1
-			&& y != 0 && y != so_long->map_size - 1)
+				&& y != 0 && y != so_long->map_size - 1)
 				put_inside(so_long, &x, &y);
 			else
 				put_outside(so_long, &x, &y);
@@ -60,11 +60,13 @@ void	put_outside(t_long *so_long, int *x, int *y)
 		put_img(so_long, search_img(so_long, OUTW_CORNER_RIGHT), *x, *y);
 	else if (*x == 0 && *y == so_long->map_size - 1)
 		put_img(so_long, search_img(so_long, OUTW_CORNER_LEFT), *x, *y);
-	else if (*x != 0 && *x != so_long->map_len - 1 && *y == so_long->map_size - 1)
+	else if (*x != 0 && *x != so_long->map_len - 1
+		&& *y == so_long->map_size - 1)
 		put_img(so_long, search_img(so_long, OUTW_LOW), *x, *y);
 	else if (*x == so_long->map_len - 1 && *y != so_long->map_size -1)
 		put_img(so_long, search_img(so_long, OUTW_RIGHT), *x, *y);
-	else if (*x == 0 && *x != so_long->map_len - 1 && *y != so_long->map_size - 1)
+	else if (*x == 0 && *x != so_long->map_len - 1
+		&& *y != so_long->map_size - 1)
 		put_img(so_long, search_img(so_long, OUTW_LEFT), *x, *y);
 	else if (*y == 0 && *x != 0 && *x != so_long->map_len - 1)
 		put_img(so_long, search_img(so_long, BUSH), *x, *y);
@@ -72,7 +74,7 @@ void	put_outside(t_long *so_long, int *x, int *y)
 
 void	put_inside(t_long *so_long, int *x, int *y)
 {
-	int random;
+	int	random;
 
 	random = rand() % 10;
 	if (so_long->map[*y][*x] == FLOOR || so_long->map[*y][*x] == ITEM

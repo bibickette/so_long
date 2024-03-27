@@ -6,7 +6,7 @@
 /*   By: phwang <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/24 14:27:32 by phwang            #+#    #+#             */
-/*   Updated: 2024/03/27 19:47:08 by phwang           ###   ########.fr       */
+/*   Updated: 2024/03/27 21:11:12 by phwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,9 +52,9 @@
 # define OUTW_LOW	"img/xpm/outw_low.xpm"
 # define OUTW_RIGHT	"img/xpm/outw_right.xpm"
 
-typedef struct s_long t_long;
-typedef struct s_image t_img;
-typedef struct s_tilesheet t_tiles;
+typedef struct s_long	t_long;
+typedef struct s_image	t_img;
+typedef struct s_tile	t_tile;
 
 typedef struct s_image
 {
@@ -80,10 +80,10 @@ typedef struct s_long
 	int		map_size;
 	int		map_len;
 
-	t_img		background;
-	t_tile 	*tiles;
-	t_img backup;
-	
+	t_img	background;
+	t_img	backup;
+	t_tile	*tiles;
+
 	int		collectable;
 	int		player;
 	int		exit;
@@ -93,7 +93,7 @@ typedef struct s_long
 
 	int		exit_x;
 	int		exit_y;
-	
+
 	int		step;
 
 }	t_long;

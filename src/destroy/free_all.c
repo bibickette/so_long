@@ -6,13 +6,13 @@
 /*   By: phwang <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/24 18:03:45 by phwang            #+#    #+#             */
-/*   Updated: 2024/03/27 19:59:04 by phwang           ###   ########.fr       */
+/*   Updated: 2024/03/27 21:21:53 by phwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../so_long.h"
 
-void apocalypse(t_long *so_long)
+void	apocalypse(t_long *so_long)
 {
 	if (so_long->tiles)
 		free_tiles(so_long);
@@ -22,7 +22,7 @@ void apocalypse(t_long *so_long)
 
 void	free_tiles(t_long *so_long)
 {
-	int i;
+	int	i;
 
 	i = -1;
 	while (so_long->tiles[++i].name)

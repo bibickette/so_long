@@ -6,23 +6,24 @@
 /*   By: phwang <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 15:39:24 by phwang            #+#    #+#             */
-/*   Updated: 2024/03/27 20:06:27 by phwang           ###   ########.fr       */
+/*   Updated: 2024/03/27 21:14:04 by phwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../so_long.h"
 
-void set_foreground(t_long *so_long)
+void	set_foreground(t_long *so_long)
 {
-	put_img(so_long, search_img(so_long, P_DOWN), so_long->player_x, so_long->player_y);
+	put_img(so_long, search_img(so_long, P_DOWN),
+		so_long->player_x, so_long->player_y);
 	put_collectable(so_long);
 }
 
-void put_collectable(t_long *so_long)
+void	put_collectable(t_long *so_long)
 {
-	int x;
-	int y;
-	
+	int	x;
+	int	y;
+
 	y = -1;
 	while (++y < so_long->map_size)
 	{
@@ -47,8 +48,12 @@ void	step_n_item(t_long *so_long, int x, int y)
 		if (so_long->collectable == 1)
 			ft_printf("You need one more diamond\n");
 		else if (so_long->collectable == 0)
+		{
+			put_img(so_long, search_img(so_long, EXIT_OPEN),
+				so_long->exit_x, so_long->exit_y);
 			ft_printf("You have theim all ! Go to the exit !\n");
-		else if (so_long->collectable > 1)
+		}
+		else
 			ft_printf("You need %d more diamonds\n", so_long->collectable);
 	}
 }
